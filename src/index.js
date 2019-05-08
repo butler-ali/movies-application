@@ -24,7 +24,4 @@ getMovies().then((movies) => {
   console.log(error);
 });
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 6e9f9235bbabd678a4a56e59db4473e51ae882f0
