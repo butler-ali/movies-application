@@ -3,15 +3,19 @@
 <head>
     <meta charset="UTF-8" />
     <title>My Application</title>
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
 
     <div class="container">
-        <h1>Hello There!</h1>
+        <h1 id="loading">Loading...</h1>
         <p>To get started, edit <code>src/index.js</code>.</p>
     </div>
-
+    <script>
+        $(document).ready(function () {
+            $('#loading').remove()
+        });
+    </script>
     <script src="./main.js"></script>
 </body>
 </html>
