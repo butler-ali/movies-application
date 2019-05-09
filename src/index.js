@@ -3,24 +3,14 @@ import $ from "jQuery";
 sayHello('World');
 const {getMovies} = require('./api.js');
 
-<<<<<<< HEAD
-//posting the new movies
-=======
-
 //posting the new movies
 function newMovie(){
->>>>>>> d1383d23b7b866c820352c10279ea0bb28f4e4bd
   $('#submit').click(function (e) {
     e.preventDefault();
 
     //getting input values
     let movieTitle = $('#title').val();
     let movieRating = $('#rating').val();
-<<<<<<< HEAD
-
-
-=======
->>>>>>> d1383d23b7b866c820352c10279ea0bb28f4e4bd
     const moviePost = {"title": movieTitle, "rating": movieRating};
     const url = '/api/movies';
     const options = {
@@ -36,24 +26,6 @@ function newMovie(){
             moviesHTML()
         )
         .catch(/* handle errors */);
-<<<<<<< HEAD
-  });
-
-  function moviesHTML() {
-    //After its done loading, changes the HTML
-    getMovies().then((movies) => {
-      $('#loading').html('');
-  //For each movie adds the id, title, and rating to the html
-
-      movies.forEach(({title, rating, id}) => {
-        let html = `<div>Movie #${id} - ${title} - rating: ${rating} </div>`;
-        $('#movies').append(html);
-      });
-    }).catch((error) => {
-      alert('Oh no! Something went wrong.\nCheck the console for details.');
-      console.log(error);
-    });
-=======
   });
 }
 
@@ -82,7 +54,6 @@ function editMovie(){
   });
 }
 
-
 function moviesHTML(){
   //After its done loading, changes the HTML
   getMovies().then((movies) => {
@@ -92,7 +63,7 @@ function moviesHTML(){
 
     movies.forEach(({title, rating, id}) => {
       let html = `<div id="card"><p>Movie #${id} - ${title} - rating: ${rating}</p> 
-      <br><button type="button" id="editMovie">Edit</button><br><button type="button" id="deleteMovie">Delete</button></div>`;
+      <br><button type="button" class="editMovie">Edit</button><br><button type="button" class="deleteMovie">Delete</button></div>`;
 
       $('#movies').append(html);
     });
@@ -102,15 +73,13 @@ function moviesHTML(){
   });
 
 }
-
+console.log("Test");
 // $("#deleteMovie").click(function () {
 //   $(this).parent.remove(movies.title);
 //   getMovies()
 // });
 
->>>>>>> d1383d23b7b866c820352c10279ea0bb28f4e4bd
 
-  }
   moviesHTML();
 
 
