@@ -12,16 +12,66 @@ sayHello('World');
 
 const {getMovies} = require('./api.js');
 
-getMovies().then((movies) => {
-  console.log('Here are all the movies:');
-  movies.forEach(({title, rating, id}) => {
-    // console.log(`id#${id} - ${title} - rating: ${rating}`);
-    let html = `<div>Movie #${id} - ${title} - rating: ${rating} </div>`;
-    $('#movies').append(html);
-  });
-}).catch((error) => {
-  alert('Oh no! Something went wrong.\nCheck the console for details.')
-  console.log(error);
+
+
+//posting the new movies
+$('#submit').click(function (e) {
+  e.preventDefault();
+
+  //getting input values
+  let movieTitle = $('#title').val();
+  let movieRating = $('#rating').val();
+
+
+
+
+  const moviePost = {"title": movieTitle, "rating": movieRating};
+  const url = '/api/movies';
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(moviePost),
+  };
+  fetch(url, options)
+      .then(
+          $('#movies').html(''),
+          moviesHTML()
+      )
+      .catch(/* handle errors */);
+
+
 });
+
+
+
+function moviesHTML(){
+  //After its done loading, changes the HTML
+  getMovies().then((movies) => {
+    $('#loading').html('');
+    $('#form').html("Title : " +
+        "<input type='text' name='title'" +
+        "<br>" + "<br>" + "Rating :"  +
+        "<input type='text' name='rating'" + "<br>"
+        + "<br>" + "<input type ='submit' value='Submit'");
+
+//For each movie adds the id, title, and rating to the html
+
+    movies.forEach(({title, rating, id}) => {
+      let html = `<div>Movie #${id} - ${title} - rating: ${rating} </div>`;
+      $('#movies').append(html);
+    });
+  }).catch((error) => {
+    alert('Oh no! Something went wrong.\nCheck the console for details.')
+    console.log(error);
+  });
+
+}
+
+
+moviesHTML();
+
+
 
 
