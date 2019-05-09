@@ -4,13 +4,13 @@
 import sayHello from './hello';
 import $ from "jQuery";
 sayHello('World');
-
+const {getMovies} = require('./api.js');
 /**
  * require style imports
  */
 //ToDo: Make an ajax request to get a listing of all the movies
 
-const {getMovies} = require('./api.js');
+
 
 
 
@@ -21,10 +21,6 @@ $('#submit').click(function (e) {
   //getting input values
   let movieTitle = $('#title').val();
   let movieRating = $('#rating').val();
-
-
-
-
   const moviePost = {"title": movieTitle, "rating": movieRating};
   const url = '/api/movies';
   const options = {
@@ -50,11 +46,6 @@ function moviesHTML(){
   //After its done loading, changes the HTML
   getMovies().then((movies) => {
     $('#loading').html('');
-    $('#form').html("Title : " +
-        "<input type='text' name='title'" +
-        "<br>" + "<br>" + "Rating :"  +
-        "<input type='text' name='rating'" + "<br>"
-        + "<br>" + "<input type ='submit' value='Submit'");
 
 //For each movie adds the id, title, and rating to the html
 
@@ -63,7 +54,7 @@ function moviesHTML(){
       $('#movies').append(html);
     });
   }).catch((error) => {
-    alert('Oh no! Something went wrong.\nCheck the console for details.')
+    alert('Oh no! Something went wrong.\nCheck the console for details.');
     console.log(error);
   });
 
