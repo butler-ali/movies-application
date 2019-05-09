@@ -18,6 +18,29 @@
     },
     {
       "id": 5
+<<<<<<< HEAD
+=======
+    },
+    {
+      "title": "rewasdds",
+      "rating": "678",
+      "id": 6
+    },
+    {
+      "title": "reewqqwfq",
+      "rating": "12345",
+      "id": 7
+    },
+    {
+      "title": "we did it",
+      "rating": "woooo",
+      "id": 8
+    },
+    {
+      "title": "Toy Story",
+      "rating": "678",
+      "id": 9
+>>>>>>> d1383d23b7b866c820352c10279ea0bb28f4e4bd
     }
   ]
 }
