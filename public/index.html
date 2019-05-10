@@ -1,18 +1,51 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
     <title>My Application</title>
     <link rel="stylesheet" href="/style.css" />
+    <!--bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
 </head>
 <body>
-
     <div class="container">
-        <h1>Hello There!</h1>
-        <h1 id="loading">loading</h1>
-        <p>To get started, edit <code>src/index.js</code>.</p>
+        <div id="movies">
+            <h2>Loading...</h2>
+        </div>
     </div>
-    <div id="movies"></div>
+    <div id="display">
+        <h1>My Favorite Movies</h1>
+        <button id="get-button">READ/GET Products</button>
+        <form id="create-form">
+            <input type="text" id="create-title" placeholder="Title">
+            <input type="text" id="create-rating" placeholder="Rating">
+            <button>Create/POST</button>
+        </form>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Rating</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+
+
+
+<!--<<<<<<< Updated upstream-->
+    <!--<div class="container">-->
+        <!--<h1>Hello There!</h1>-->
+        <!--<h1 id="loading">loading</h1>-->
+        <!--<p>To get started, edit <code>src/index.js</code>.</p>-->
+<!--=======-->
+
+
+    <!--<div id="movies"></div>-->
 
     <script src="./main.js"></script>
 </body>
