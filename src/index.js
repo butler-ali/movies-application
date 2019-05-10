@@ -5,7 +5,7 @@ const {getMovies} = require('./api.js');
 
 
 //posting the new movies
-function newMovie(){
+
   $('#submit').click(function (e) {
     e.preventDefault();
 
@@ -28,9 +28,9 @@ function newMovie(){
         )
         .catch(/* handle errors */);
   });
-}
 
-function editMovie(){
+
+
   $('#editMovie').click(function (e) {
     e.preventDefault();
     console.log(('Hello this is a test for the edit movie'));
@@ -53,7 +53,7 @@ function editMovie(){
         )
         .catch(/* handle errors */);
   });
-}
+
 
 
 function moviesHTML(){
